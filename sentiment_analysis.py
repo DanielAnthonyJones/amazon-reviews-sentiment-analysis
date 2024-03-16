@@ -4,6 +4,7 @@
 """
 import os
 import sys
+import time
 import spacy
 import pandas as pd
 from spacytextblob.spacytextblob import SpacyTextBlob   
@@ -28,6 +29,8 @@ clean_data = reviews_data.dropna()
 # Function for predicting the sentiment of a review
 
 def sentiment_prediction():
+
+    time.sleep(3)
     
     text = nlp(review)
 
@@ -43,7 +46,7 @@ def sentiment_prediction():
         return sentiment, "Extremely Positive"
     
     elif (polarity >= 0.5):
-
+    
         return sentiment, "Very Positive"
 
     elif (polarity >= 0.25):
@@ -53,13 +56,13 @@ def sentiment_prediction():
     elif (polarity > 0):
 
         return sentiment, "Slightly Positive"
-
+      
     elif (polarity <= -0.75):
         
         return sentiment, "Extremely Negative"
     
     elif (polarity <= -0.5):
-
+      
         return sentiment, "Very Negative"
     
     elif (polarity <= -0.25):
@@ -78,6 +81,8 @@ def sentiment_prediction():
 
 def similarity():
     
+    time.sleep(3)
+
     text1 = nlp_lg(compare1)
     text2 = nlp_lg(compare2)
 
