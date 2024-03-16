@@ -41,7 +41,11 @@ def sentiment_prediction():
 
     # Returns a rating based on polarity
 
-    if (polarity >= 0.5):
+    if (polarity >= 0.75):
+    
+        return sentiment, "Extremely Positive"
+    
+    elif (polarity >= 0.5):
     
         return sentiment, "Very Positive"
 
@@ -52,9 +56,13 @@ def sentiment_prediction():
     elif (polarity > 0):
 
         return sentiment, "Slightly Positive"
-
-    elif (polarity <= -0.5):
+      
+    elif (polarity <= -0.75):
         
+        return sentiment, "Extremely Negative"
+    
+    elif (polarity <= -0.5):
+      
         return sentiment, "Very Negative"
     
     elif (polarity <= -0.25):
